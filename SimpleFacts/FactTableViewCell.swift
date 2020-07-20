@@ -15,6 +15,7 @@ class FactTableViewCell: UITableViewCell {
     var fact: Fact? {
         didSet {
             photoView.image = UIImage(named: "placeholder")
+            photoView.loadImage(at: fact?.imageHref)
             nameLabel.text = fact?.title ?? "default title"
             detailLabel.text = fact?.description ?? "default description"
         }
@@ -69,7 +70,10 @@ class FactTableViewCell: UITableViewCell {
     // MARK: - Default methods
     
     override func prepareForReuse() {
-        super.prepareForReuse()        
+        super.prepareForReuse()
+        
+        photoView.image = nil
+        photoView.cancelImageLoad()
     }
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

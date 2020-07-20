@@ -20,6 +20,9 @@
 		F0FED81E24C5F65B00C0608B /* FactsAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81D24C5F65B00C0608B /* FactsAPIError.swift */; };
 		F0FED82024C5F68A00C0608B /* FactsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */; };
 		F0FED82424C5FCDA00C0608B /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82324C5FCDA00C0608B /* Fact.swift */; };
+		F0FED82724C6097200C0608B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82624C6097200C0608B /* ImageLoader.swift */; };
+		F0FED82924C6099900C0608B /* UIImageView+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82824C6099900C0608B /* UIImageView+Loader.swift */; };
+		F0FED82B24C609AE00C0608B /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82A24C609AE00C0608B /* UIImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		F0FED81D24C5F65B00C0608B /* FactsAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPIError.swift; sourceTree = "<group>"; };
 		F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPIProtocol.swift; sourceTree = "<group>"; };
 		F0FED82324C5FCDA00C0608B /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		F0FED82624C6097200C0608B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		F0FED82824C6099900C0608B /* UIImageView+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Loader.swift"; sourceTree = "<group>"; };
+		F0FED82A24C609AE00C0608B /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +126,20 @@
 		F0FED80E24C5DD7D00C0608B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F0FED82524C6096100C0608B /* Image Loader */,
 				F0FED80F24C5DD9F00C0608B /* LayoutAnchor.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F0FED82524C6096100C0608B /* Image Loader */ = {
+			isa = PBXGroup;
+			children = (
+				F0FED82624C6097200C0608B /* ImageLoader.swift */,
+				F0FED82A24C609AE00C0608B /* UIImageLoader.swift */,
+				F0FED82824C6099900C0608B /* UIImageView+Loader.swift */,
+			);
+			path = "Image Loader";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +247,9 @@
 				F0FED81824C5F60300C0608B /* FactsAPIClient.swift in Sources */,
 				F0FED82024C5F68A00C0608B /* FactsAPIProtocol.swift in Sources */,
 				F0FED81E24C5F65B00C0608B /* FactsAPIError.swift in Sources */,
+				F0FED82924C6099900C0608B /* UIImageView+Loader.swift in Sources */,
+				F0FED82724C6097200C0608B /* ImageLoader.swift in Sources */,
+				F0FED82B24C609AE00C0608B /* UIImageLoader.swift in Sources */,
 				F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */,
 				F0FED81624C5E14C00C0608B /* FactTableViewCell.swift in Sources */,
 				F0FED82424C5FCDA00C0608B /* Fact.swift in Sources */,
