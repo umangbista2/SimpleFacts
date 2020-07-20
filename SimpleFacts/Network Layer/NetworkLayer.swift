@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkLayer {
-    func request(api: APIType, completion: @escaping ((Swift.Result<FactsData, ApiError>) -> Void)) {
+    func request<T: Decodable>(api: APIType, completion: @escaping ((Swift.Result<T, ApiError>) -> Void)) {
         let session = URLSession.shared
         let url = URL(string: api.endpoint)!
         var request = URLRequest(url: url)
@@ -41,11 +41,10 @@ class NetworkLayer {
                 let iso = String.init(data: data!, encoding: .isoLatin1)
                 let utf8 = iso?.data(using: .utf8)
                 
-                
                 let json = try JSONSerialization.jsonObject(with: utf8!, options: []) as? [String: Any]
                 print("json: ", json as Any)
                 
-                let data = try JSONDecoder().decode(FactsData.self, from: utf8!)
+                let data = try JSONDecoder().decode(T.self, from: utf8!)
                 
                 print("data: ", data)
                 
