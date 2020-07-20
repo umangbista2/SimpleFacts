@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let viewController = FactsViewController(viewModel: FactsViewModelImplementation())
+        let factsViewModel = FactsViewModelImplementation(factsApiClient: FactsAPIClient())
+        let viewController = FactsViewController(viewModel: factsViewModel)
         viewController.view.backgroundColor = .white
         window = UIWindow()
         window?.rootViewController = UINavigationController(rootViewController: viewController)

@@ -34,6 +34,7 @@ class FactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.fetchContent()
     }
 
 }

@@ -9,10 +9,29 @@
 import Foundation
 
 protocol FactsViewModel: class {
-    
+    func fetchContent()
 }
 
 
 final class FactsViewModelImplementation: FactsViewModel {
     
+    private let factsApiClient: FactsAPIProtocol
+    
+    init(factsApiClient: FactsAPIProtocol) {
+        self.factsApiClient = factsApiClient
+    }
+    
+    // MARK: FactsViewModel Protocol Implementation
+    
+    func fetchContent() {
+        factsApiClient.getFacts { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+                
+            case .success(let factsData):
+                print(factsData)
+            }
+        }
+    }
 }
