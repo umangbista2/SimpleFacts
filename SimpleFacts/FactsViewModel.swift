@@ -10,6 +10,7 @@ import Foundation
 
 protocol FactsViewModel: class {
     var view: FactsView? { get set }
+    var title: String { get }
 
     func numberOfRows(inSection section: Int) -> Int
     func factForRow(atIndexPath indexPath: IndexPath) -> Fact
@@ -40,6 +41,8 @@ final class FactsViewModelImplementation: FactsViewModel {
     
     weak var view: FactsView?
     
+    var title: String { factsData?.title ?? "Facts unavailable" }
+
     func numberOfRows(inSection section: Int) -> Int {
         return facts.count
     }

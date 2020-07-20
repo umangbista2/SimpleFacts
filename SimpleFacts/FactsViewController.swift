@@ -18,6 +18,8 @@ class FactsViewController: UIViewController {
 
     private let tableView = UITableView()
 
+    private var refreshControl = UIRefreshControl()
+
     init(viewModel: FactsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -49,9 +51,22 @@ class FactsViewController: UIViewController {
 extension FactsViewController: FactsView {
     
     func update() {
+        refreshControl.endRefreshing()
+
+        title = viewModel.title
+
         tableView.reloadData()
     }
     
+}
+
+// MARK: - Events
+
+extension FactsViewController {
+    @objc
+    private func refresh(_ sender: Any) {
+        viewModel.fetchContent()
+    }
 }
 
 // MARK: - Helpers
@@ -62,6 +77,7 @@ extension FactsViewController {
         title = "Facts"
         
         setupTableView()
+        setupRefreshControl()
     }
     
     private func setupTableView() {
@@ -77,6 +93,12 @@ extension FactsViewController {
         tableView.estimatedRowHeight = 100
         
         tableView.register(FactTableViewCell.self, forCellReuseIdentifier: FactTableViewCell.reuseIdentifier)
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
 }
 
