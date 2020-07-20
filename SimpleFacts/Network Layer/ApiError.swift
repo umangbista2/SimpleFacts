@@ -12,5 +12,6 @@ enum ApiError: Error {
     case client
     case server
     case mimeType
-    case parse
+    case decoding
+    case encoding
 }

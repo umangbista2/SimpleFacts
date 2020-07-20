@@ -19,9 +19,9 @@ class NetworkLayer {
         
         session.dataTask(with: request) { (data, response, error) in
             
-            if error != nil || data == nil {
+            guard let data = data else {
                 print("Client error!")
-                completion(.failure(ApiError.parse))
+                completion(.failure(ApiError.client))
                 return
             }
             
@@ -37,21 +37,25 @@ class NetworkLayer {
                 return
             }
             
+            guard
+                let iso = String.init(data: data, encoding: .isoLatin1),
+                let utf8 = iso.data(using: .utf8) else {
+                    completion(.failure(.encoding))
+                    return
+            }
+
             do {
-                let iso = String.init(data: data!, encoding: .isoLatin1)
-                let utf8 = iso?.data(using: .utf8)
-                
-                let json = try JSONSerialization.jsonObject(with: utf8!, options: []) as? [String: Any]
+                let json = try JSONSerialization.jsonObject(with: utf8, options: []) as? [String: Any]
                 print("json: ", json as Any)
                 
-                let data = try JSONDecoder().decode(T.self, from: utf8!)
+                let data = try JSONDecoder().decode(T.self, from: utf8)
                 
                 print("data: ", data)
                 
                 completion(.success(data))
             } catch {
                 print(error)
-                completion(.failure(ApiError.parse))
+                completion(.failure(ApiError.decoding))
             }
             
         }.resume()
