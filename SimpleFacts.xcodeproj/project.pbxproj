@@ -14,6 +14,7 @@
 		F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED80C24C5DD3400C0608B /* FactsViewController.swift */; };
 		F0FED81024C5DD9F00C0608B /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED80F24C5DD9F00C0608B /* LayoutAnchor.swift */; };
 		F0FED81424C5E06E00C0608B /* FactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81324C5E06E00C0608B /* FactsViewModel.swift */; };
+		F0FED81624C5E14C00C0608B /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81524C5E14C00C0608B /* FactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		F0FED80C24C5DD3400C0608B /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 		F0FED80F24C5DD9F00C0608B /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 		F0FED81324C5E06E00C0608B /* FactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewModel.swift; sourceTree = "<group>"; };
+		F0FED81524C5E14C00C0608B /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				F0FED7EA24C5DBCE00C0608B /* AppDelegate.swift */,
 				F0FED81324C5E06E00C0608B /* FactsViewModel.swift */,
 				F0FED80C24C5DD3400C0608B /* FactsViewController.swift */,
+				F0FED81524C5E14C00C0608B /* FactTableViewCell.swift */,
 				F0FED80E24C5DD7D00C0608B /* Utilities */,
 				F0FED7F324C5DBD500C0608B /* Assets.xcassets */,
 				F0FED7F524C5DBD500C0608B /* LaunchScreen.storyboard */,
@@ -209,6 +212,7 @@
 			files = (
 				F0FED81424C5E06E00C0608B /* FactsViewModel.swift in Sources */,
 				F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */,
+				F0FED81624C5E14C00C0608B /* FactTableViewCell.swift in Sources */,
 				F0FED81024C5DD9F00C0608B /* LayoutAnchor.swift in Sources */,
 				F0FED7EB24C5DBCE00C0608B /* AppDelegate.swift in Sources */,
 			);

@@ -59,6 +59,8 @@ extension FactsViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
+        
+        tableView.register(FactTableViewCell.self, forCellReuseIdentifier: FactTableViewCell.reuseIdentifier)
     }
 }
 
@@ -67,11 +69,14 @@ extension FactsViewController {
 extension FactsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: FactTableViewCell.reuseIdentifier, for: indexPath) as! FactTableViewCell
+        cell.config()
+        return cell
+
     }
     
 }
