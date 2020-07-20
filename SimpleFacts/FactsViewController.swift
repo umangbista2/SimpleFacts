@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol FactsView: class {    
+    func update()
+}
+
 class FactsViewController: UIViewController {
 
     private let viewModel: FactsViewModel!
@@ -33,10 +37,21 @@ class FactsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        viewModel.view = self
         viewModel.fetchContent()
     }
 
+}
+
+// MARK: - View Protocol
+
+extension FactsViewController: FactsView {
+    
+    func update() {
+        tableView.reloadData()
+    }
+    
 }
 
 // MARK: - Helpers
@@ -70,14 +85,13 @@ extension FactsViewController {
 extension FactsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfRows(inSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FactTableViewCell.reuseIdentifier, for: indexPath) as! FactTableViewCell
-        cell.config()
+        cell.fact = viewModel.factForRow(atIndexPath: indexPath)
         return cell
-
     }
     
 }

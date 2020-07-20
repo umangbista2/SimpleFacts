@@ -12,6 +12,14 @@ class FactTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "FactTableViewCell"
     
+    var fact: Fact? {
+        didSet {
+            photoView.image = UIImage(named: "placeholder")
+            nameLabel.text = fact?.title ?? "default title"
+            detailLabel.text = fact?.description ?? "default description"
+        }
+    }
+    
     // MARK: UI Elements
     
     private let dataView: UIView = {
@@ -79,12 +87,6 @@ class FactTableViewCell: UITableViewCell {
     }
     
     // MARK: - Helpers
-    
-    func config() {
-        photoView.image = UIImage(named: "placeholder")
-        nameLabel.text = "Title"
-        detailLabel.text = "Description"
-    }
 
     private func setupViews() {
         selectionStyle = .none
