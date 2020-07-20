@@ -11,6 +11,8 @@
 		F0FED7F424C5DBD500C0608B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FED7F324C5DBD500C0608B /* Assets.xcassets */; };
 		F0FED7F724C5DBD500C0608B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FED7F524C5DBD500C0608B /* LaunchScreen.storyboard */; };
 		F0FED80224C5DBD600C0608B /* SimpleFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED80124C5DBD600C0608B /* SimpleFactsTests.swift */; };
+		F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED80C24C5DD3400C0608B /* FactsViewController.swift */; };
+		F0FED81024C5DD9F00C0608B /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED80F24C5DD9F00C0608B /* LayoutAnchor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		F0FED7FD24C5DBD600C0608B /* SimpleFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FED80124C5DBD600C0608B /* SimpleFactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFactsTests.swift; sourceTree = "<group>"; };
 		F0FED80324C5DBD600C0608B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0FED80C24C5DD3400C0608B /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
+		F0FED80F24C5DD9F00C0608B /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				F0FED7EA24C5DBCE00C0608B /* AppDelegate.swift */,
+				F0FED80C24C5DD3400C0608B /* FactsViewController.swift */,
+				F0FED80E24C5DD7D00C0608B /* Utilities */,
 				F0FED7F324C5DBD500C0608B /* Assets.xcassets */,
 				F0FED7F524C5DBD500C0608B /* LaunchScreen.storyboard */,
 				F0FED7F824C5DBD500C0608B /* Info.plist */,
@@ -88,6 +94,14 @@
 				F0FED80324C5DBD600C0608B /* Info.plist */,
 			);
 			path = SimpleFactsTests;
+			sourceTree = "<group>";
+		};
+		F0FED80E24C5DD7D00C0608B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F0FED80F24C5DD9F00C0608B /* LayoutAnchor.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */,
+				F0FED81024C5DD9F00C0608B /* LayoutAnchor.swift in Sources */,
 				F0FED7EB24C5DBCE00C0608B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RL3YLY53U2;
 				INFOPLIST_FILE = SimpleFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +380,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RL3YLY53U2;
 				INFOPLIST_FILE = SimpleFacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
