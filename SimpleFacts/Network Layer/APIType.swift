@@ -1,5 +1,5 @@
 //
-//  FactsAPIError.swift
+//  APIType.swift
 //  SimpleFacts
 //
 //  Created by Umang Bista on 20/07/20.
@@ -8,9 +8,7 @@
 
 import Foundation
 
-enum FactsAPIError: Error {
-    case client
-    case server
-    case mimeType
-    case parse
+protocol APIType {
+    var endpoint: String { get }
+    var method: String { get }
 }

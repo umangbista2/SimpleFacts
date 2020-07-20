@@ -17,12 +17,15 @@
 		F0FED81624C5E14C00C0608B /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81524C5E14C00C0608B /* FactTableViewCell.swift */; };
 		F0FED81824C5F60300C0608B /* FactsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81724C5F60300C0608B /* FactsAPIClient.swift */; };
 		F0FED81A24C5F61800C0608B /* FactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81924C5F61800C0608B /* FactsData.swift */; };
-		F0FED81E24C5F65B00C0608B /* FactsAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81D24C5F65B00C0608B /* FactsAPIError.swift */; };
 		F0FED82024C5F68A00C0608B /* FactsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */; };
 		F0FED82424C5FCDA00C0608B /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82324C5FCDA00C0608B /* Fact.swift */; };
 		F0FED82724C6097200C0608B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82624C6097200C0608B /* ImageLoader.swift */; };
 		F0FED82924C6099900C0608B /* UIImageView+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82824C6099900C0608B /* UIImageView+Loader.swift */; };
 		F0FED82B24C609AE00C0608B /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82A24C609AE00C0608B /* UIImageLoader.swift */; };
+		F0FED82D24C60C4F00C0608B /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82C24C60C4F00C0608B /* NetworkLayer.swift */; };
+		F0FED82F24C60D3100C0608B /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82E24C60D3100C0608B /* ApiError.swift */; };
+		F0FED83124C60DDF00C0608B /* APIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED83024C60DDF00C0608B /* APIType.swift */; };
+		F0FED83324C60E5A00C0608B /* FactsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED83224C60E5A00C0608B /* FactsAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,12 +53,15 @@
 		F0FED81524C5E14C00C0608B /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
 		F0FED81724C5F60300C0608B /* FactsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPIClient.swift; sourceTree = "<group>"; };
 		F0FED81924C5F61800C0608B /* FactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsData.swift; sourceTree = "<group>"; };
-		F0FED81D24C5F65B00C0608B /* FactsAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPIError.swift; sourceTree = "<group>"; };
 		F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPIProtocol.swift; sourceTree = "<group>"; };
 		F0FED82324C5FCDA00C0608B /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		F0FED82624C6097200C0608B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		F0FED82824C6099900C0608B /* UIImageView+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Loader.swift"; sourceTree = "<group>"; };
 		F0FED82A24C609AE00C0608B /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
+		F0FED82C24C60C4F00C0608B /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		F0FED82E24C60D3100C0608B /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		F0FED83024C60DDF00C0608B /* APIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIType.swift; sourceTree = "<group>"; };
+		F0FED83224C60E5A00C0608B /* FactsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +107,8 @@
 				F0FED81324C5E06E00C0608B /* FactsViewModel.swift */,
 				F0FED80C24C5DD3400C0608B /* FactsViewController.swift */,
 				F0FED81524C5E14C00C0608B /* FactTableViewCell.swift */,
-				F0FED81724C5F60300C0608B /* FactsAPIClient.swift */,
-				F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */,
-				F0FED81924C5F61800C0608B /* FactsData.swift */,
-				F0FED82324C5FCDA00C0608B /* Fact.swift */,
-				F0FED81D24C5F65B00C0608B /* FactsAPIError.swift */,
+				F0FED83624C60F9400C0608B /* Models */,
+				F0FED83524C60F7F00C0608B /* Network Layer */,
 				F0FED80E24C5DD7D00C0608B /* Utilities */,
 				F0FED7F324C5DBD500C0608B /* Assets.xcassets */,
 				F0FED7F524C5DBD500C0608B /* LaunchScreen.storyboard */,
@@ -140,6 +143,36 @@
 				F0FED82824C6099900C0608B /* UIImageView+Loader.swift */,
 			);
 			path = "Image Loader";
+			sourceTree = "<group>";
+		};
+		F0FED83424C60F7300C0608B /* Facts API */ = {
+			isa = PBXGroup;
+			children = (
+				F0FED83224C60E5A00C0608B /* FactsAPI.swift */,
+				F0FED81724C5F60300C0608B /* FactsAPIClient.swift */,
+				F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */,
+			);
+			path = "Facts API";
+			sourceTree = "<group>";
+		};
+		F0FED83524C60F7F00C0608B /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				F0FED83424C60F7300C0608B /* Facts API */,
+				F0FED83024C60DDF00C0608B /* APIType.swift */,
+				F0FED82E24C60D3100C0608B /* ApiError.swift */,
+				F0FED82C24C60C4F00C0608B /* NetworkLayer.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		F0FED83624C60F9400C0608B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0FED81924C5F61800C0608B /* FactsData.swift */,
+				F0FED82324C5FCDA00C0608B /* Fact.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,13 +275,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FED82D24C60C4F00C0608B /* NetworkLayer.swift in Sources */,
 				F0FED81A24C5F61800C0608B /* FactsData.swift in Sources */,
 				F0FED81424C5E06E00C0608B /* FactsViewModel.swift in Sources */,
 				F0FED81824C5F60300C0608B /* FactsAPIClient.swift in Sources */,
+				F0FED83324C60E5A00C0608B /* FactsAPI.swift in Sources */,
+				F0FED83124C60DDF00C0608B /* APIType.swift in Sources */,
 				F0FED82024C5F68A00C0608B /* FactsAPIProtocol.swift in Sources */,
-				F0FED81E24C5F65B00C0608B /* FactsAPIError.swift in Sources */,
 				F0FED82924C6099900C0608B /* UIImageView+Loader.swift in Sources */,
 				F0FED82724C6097200C0608B /* ImageLoader.swift in Sources */,
+				F0FED82F24C60D3100C0608B /* ApiError.swift in Sources */,
 				F0FED82B24C609AE00C0608B /* UIImageLoader.swift in Sources */,
 				F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */,
 				F0FED81624C5E14C00C0608B /* FactTableViewCell.swift in Sources */,

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FactsAPIProtocol {
-    func getFacts(completion: @escaping ((Swift.Result<FactsData, FactsAPIError>) -> Void))
+    func getFacts(completion: @escaping ((Swift.Result<FactsData, ApiError>) -> Void))
 }
