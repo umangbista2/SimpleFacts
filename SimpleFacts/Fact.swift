@@ -1,5 +1,5 @@
 //
-//  FactsData.swift
+//  Fact.swift
 //  SimpleFacts
 //
 //  Created by Umang Bista on 20/07/20.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct FactsData: Decodable {
-    var title: String?
-    var rows: [Fact]?
+struct Fact: Decodable {
+    let title: String?
+    let description: String?
+    let imageHref: String?
 }

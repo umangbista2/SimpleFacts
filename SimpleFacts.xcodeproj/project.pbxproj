@@ -19,6 +19,7 @@
 		F0FED81A24C5F61800C0608B /* FactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81924C5F61800C0608B /* FactsData.swift */; };
 		F0FED81E24C5F65B00C0608B /* FactsAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81D24C5F65B00C0608B /* FactsAPIError.swift */; };
 		F0FED82024C5F68A00C0608B /* FactsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */; };
+		F0FED82424C5FCDA00C0608B /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED82324C5FCDA00C0608B /* Fact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		F0FED81924C5F61800C0608B /* FactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsData.swift; sourceTree = "<group>"; };
 		F0FED81D24C5F65B00C0608B /* FactsAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPIError.swift; sourceTree = "<group>"; };
 		F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPIProtocol.swift; sourceTree = "<group>"; };
+		F0FED82324C5FCDA00C0608B /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				F0FED81724C5F60300C0608B /* FactsAPIClient.swift */,
 				F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */,
 				F0FED81924C5F61800C0608B /* FactsData.swift */,
+				F0FED82324C5FCDA00C0608B /* Fact.swift */,
 				F0FED81D24C5F65B00C0608B /* FactsAPIError.swift */,
 				F0FED80E24C5DD7D00C0608B /* Utilities */,
 				F0FED7F324C5DBD500C0608B /* Assets.xcassets */,
@@ -229,6 +232,7 @@
 				F0FED81E24C5F65B00C0608B /* FactsAPIError.swift in Sources */,
 				F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */,
 				F0FED81624C5E14C00C0608B /* FactTableViewCell.swift in Sources */,
+				F0FED82424C5FCDA00C0608B /* Fact.swift in Sources */,
 				F0FED81024C5DD9F00C0608B /* LayoutAnchor.swift in Sources */,
 				F0FED7EB24C5DBCE00C0608B /* AppDelegate.swift in Sources */,
 			);
