@@ -13,6 +13,7 @@
 		F0FED80224C5DBD600C0608B /* SimpleFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED80124C5DBD600C0608B /* SimpleFactsTests.swift */; };
 		F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED80C24C5DD3400C0608B /* FactsViewController.swift */; };
 		F0FED81024C5DD9F00C0608B /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED80F24C5DD9F00C0608B /* LayoutAnchor.swift */; };
+		F0FED81424C5E06E00C0608B /* FactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED81324C5E06E00C0608B /* FactsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		F0FED80324C5DBD600C0608B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0FED80C24C5DD3400C0608B /* FactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewController.swift; sourceTree = "<group>"; };
 		F0FED80F24C5DD9F00C0608B /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
+		F0FED81324C5E06E00C0608B /* FactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				F0FED7EA24C5DBCE00C0608B /* AppDelegate.swift */,
+				F0FED81324C5E06E00C0608B /* FactsViewModel.swift */,
 				F0FED80C24C5DD3400C0608B /* FactsViewController.swift */,
 				F0FED80E24C5DD7D00C0608B /* Utilities */,
 				F0FED7F324C5DBD500C0608B /* Assets.xcassets */,
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FED81424C5E06E00C0608B /* FactsViewModel.swift in Sources */,
 				F0FED80D24C5DD3400C0608B /* FactsViewController.swift in Sources */,
 				F0FED81024C5DD9F00C0608B /* LayoutAnchor.swift in Sources */,
 				F0FED7EB24C5DBCE00C0608B /* AppDelegate.swift in Sources */,
