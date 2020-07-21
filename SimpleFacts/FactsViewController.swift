@@ -33,6 +33,8 @@ class FactsViewController: UIViewController {
 
     private var refreshControl = UIRefreshControl()
 
+    // MARK: View Controller Life Cycle
+    
     init(viewModel: FactsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

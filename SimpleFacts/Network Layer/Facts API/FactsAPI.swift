@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Enum grouping Facts related APIs and defining `Endpoint` and request `Type`
+
 enum FactsAPI: APIType {
     case getAll
     

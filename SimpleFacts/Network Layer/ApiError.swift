@@ -9,6 +9,7 @@
 import Foundation
 
 /// Custom Error Implementation for handling API Errors
+
 enum ApiError: Error {
     case client
     case server

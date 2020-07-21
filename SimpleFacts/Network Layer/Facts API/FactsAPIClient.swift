@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Class to handle Facts API client
+
 class FactsAPIClient: FactsAPIProtocol {
     let networkLayer = NetworkLayer()
     

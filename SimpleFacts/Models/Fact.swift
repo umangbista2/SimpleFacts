@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Simple Fact
+
 struct Fact: Decodable {
     let title: String?
     let description: String?

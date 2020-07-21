@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Model to handle facts api response data
+
 struct FactsData: Decodable {
     var title: String?
     var rows: [Fact]?

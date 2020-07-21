@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Network Layer: The actual call to the api using URL Session
+
 class NetworkLayer {
     func request<T: Decodable>(api: APIType, completion: @escaping ((Swift.Result<T, ApiError>) -> Void)) {
         let session = URLSession.shared

@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// API Type: A Type to group related APIs
+
 protocol APIType {
     var endpoint: String { get }
     var method: String { get }

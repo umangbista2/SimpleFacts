@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Protocol ro group Facts related APIs
+
 protocol FactsAPIProtocol {
     func getFacts(completion: @escaping ((Swift.Result<FactsData, ApiError>) -> Void))
 }

@@ -21,7 +21,7 @@ class FactTableViewCell: UITableViewCell {
         }
     }
     
-    // MARK: UI Elements
+    // MARK: - UI Elements
     
     private let dataView: UIView = {
         let view = UIView()
@@ -63,8 +63,15 @@ class FactTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    // MARK: - Constraint
+    
+    // Constraints for Compact and Regular Size classes
     private var sharedConstraints: [NSLayoutConstraint] = []
+    
+    // Constraints for Compact Size classes
     private var compactConstraints: [NSLayoutConstraint] = []
+    
+    // Constraints for Regular Size classes
     private var regularConstraints: [NSLayoutConstraint] = []
     
     // MARK: - Default methods

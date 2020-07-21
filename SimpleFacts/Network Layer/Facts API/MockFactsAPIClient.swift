@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Mock API client to Unit Test offline test cases
+
 class MockFactsAPIClient: FactsAPIProtocol {
     let facts = [
         Fact(title: "Title1", description: "Description1", imageHref: nil),
