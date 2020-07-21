@@ -11,6 +11,7 @@
 		84F3D6072F39DC9C1EC5DBFA /* Pods_SimpleFactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB4D12FB0629C024A45EED /* Pods_SimpleFactsTests.framework */; };
 		F047891424C681B60039BAAA /* UITableView+message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047891324C681B60039BAAA /* UITableView+message.swift */; };
 		F047891624C682E30039BAAA /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047891524C682E30039BAAA /* UIViewController+alert.swift */; };
+		F047891C24C6ACF50039BAAA /* MockFactsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047891B24C6ACF50039BAAA /* MockFactsAPIClient.swift */; };
 		F0FED7EB24C5DBCE00C0608B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FED7EA24C5DBCE00C0608B /* AppDelegate.swift */; };
 		F0FED7F424C5DBD500C0608B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FED7F324C5DBD500C0608B /* Assets.xcassets */; };
 		F0FED7F724C5DBD500C0608B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FED7F524C5DBD500C0608B /* LaunchScreen.storyboard */; };
@@ -51,6 +52,7 @@
 		DF901A3DE61F216DEBF9B584 /* Pods-SimpleFactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleFactsTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleFactsTests/Pods-SimpleFactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F047891324C681B60039BAAA /* UITableView+message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+message.swift"; sourceTree = "<group>"; };
 		F047891524C682E30039BAAA /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		F047891B24C6ACF50039BAAA /* MockFactsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFactsAPIClient.swift; sourceTree = "<group>"; };
 		F0FED7E724C5DBCE00C0608B /* SimpleFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FED7EA24C5DBCE00C0608B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0FED7F324C5DBD500C0608B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				F0FED83224C60E5A00C0608B /* FactsAPI.swift */,
 				F0FED81724C5F60300C0608B /* FactsAPIClient.swift */,
 				F0FED81F24C5F68A00C0608B /* FactsAPIProtocol.swift */,
+				F047891B24C6ACF50039BAAA /* MockFactsAPIClient.swift */,
 			);
 			path = "Facts API";
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				F0FED81624C5E14C00C0608B /* FactTableViewCell.swift in Sources */,
 				F0FED82424C5FCDA00C0608B /* Fact.swift in Sources */,
 				F0FED81024C5DD9F00C0608B /* LayoutAnchor.swift in Sources */,
+				F047891C24C6ACF50039BAAA /* MockFactsAPIClient.swift in Sources */,
 				F0FED7EB24C5DBCE00C0608B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,25 +10,31 @@ import XCTest
 @testable import SimpleFacts
 
 class SimpleFactsTests: XCTestCase {
+    
+    var factsViewModel: FactsViewModelImplementation!
+    var mockApiClient: MockFactsAPIClient!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        mockApiClient = MockFactsAPIClient()
+        factsViewModel = FactsViewModelImplementation(factsApiClient: mockApiClient)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        mockApiClient = nil
+        factsViewModel = nil
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_factViewModelTitle() {
+        factsViewModel.fetchContent()
+        XCTAssertEqual(factsViewModel.title, "Facts Title")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_factsViewModelNumberOfRows() {
+        factsViewModel.fetchContent()
+        let rows = factsViewModel.numberOfRows(inSection: 0)
+        
+        XCTAssertEqual(rows, 3)
     }
-
 }
