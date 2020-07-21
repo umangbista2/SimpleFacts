@@ -37,4 +37,27 @@ class SimpleFactsTests: XCTestCase {
         
         XCTAssertEqual(rows, 3)
     }
+    
+    func test_factsRepsonseAPIRepsonse() {
+        let factsAPIClient = FactsAPIClient()
+        
+        let expectation = self.expectation(description: "Check Facts API Response")
+        
+        var errorResponse: ApiError?
+        
+        factsAPIClient.getFacts { result in
+            switch result {
+            case .failure(let error):
+                print("failure error: ", error.localizedDescription)
+                errorResponse = error
+            case .success(let result):
+                print("result:", result)
+                expectation.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 5) { error in
+            XCTAssertNil(errorResponse, error.debugDescription)
+        }
+    }
 }
