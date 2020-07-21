@@ -21,6 +21,7 @@ class SimpleFactsTests: XCTestCase {
     }
 
     override func tearDown() {
+        URLCache.shared.removeAllCachedResponses()
         mockApiClient = nil
         factsViewModel = nil
         super.tearDown()

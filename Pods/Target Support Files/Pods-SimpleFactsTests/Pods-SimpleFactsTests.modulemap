@@ -1,0 +1,6 @@
+framework module Pods_SimpleFactsTests {
+  umbrella header "Pods-SimpleFactsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

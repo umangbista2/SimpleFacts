@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FactTableViewCell: UITableViewCell {
     
@@ -15,7 +16,7 @@ class FactTableViewCell: UITableViewCell {
     var fact: Fact? {
         didSet {
             photoView.image = UIImage(named: "placeholder")
-            photoView.loadImage(at: fact?.imageHref)
+            photoView.kf.setImage(with: URL.init(string: fact?.imageHref ?? ""), placeholder: UIImage.init(named: "placeholder"))
             nameLabel.text = fact?.title ?? "default title"
             detailLabel.text = fact?.description ?? "default description"
         }
@@ -80,7 +81,7 @@ class FactTableViewCell: UITableViewCell {
         super.prepareForReuse()
         
         photoView.image = nil
-        photoView.cancelImageLoad()
+//        photoView.cancelImageLoad()
     }
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
