@@ -147,7 +147,7 @@ extension FactsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let rows = viewModel.numberOfRows(inSection: section)
         if rows == 0 {
-            tableView.setMessage("Some error occurred \n Pull to refresh")
+            tableView.setMessage(viewModel.statusMessage)
         } else {
             tableView.removeMessage()
         }

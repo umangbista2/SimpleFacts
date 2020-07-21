@@ -16,11 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        window = UIWindow()
+        
+        /// Initialize and Inject Fact View Model Type to the Facts View Controller
         let factsViewModel = FactsViewModelImplementation(factsApiClient: FactsAPIClient())
         let viewController = FactsViewController(viewModel: factsViewModel)
         viewController.view.backgroundColor = .white
-        window = UIWindow()
+        
+        /// Set Application's Root View Controller
         window?.rootViewController = UINavigationController(rootViewController: viewController)
+        
         window?.makeKeyAndVisible()
 
         return true

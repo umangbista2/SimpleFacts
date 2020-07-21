@@ -63,9 +63,9 @@ class FactTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    private var sharedConstraints: [NSLayoutConstraint] = []
     private var compactConstraints: [NSLayoutConstraint] = []
     private var regularConstraints: [NSLayoutConstraint] = []
-    private var sharedConstraints: [NSLayoutConstraint] = []
     
     // MARK: - Default methods
     
