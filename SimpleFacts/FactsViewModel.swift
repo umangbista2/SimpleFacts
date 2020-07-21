@@ -18,6 +18,7 @@ protocol FactsViewModel: class {
     func factForRow(atIndexPath indexPath: IndexPath) -> Fact
     
     func viewDidLoad()
+    func viewWillAppear()
     func fetchContent()
 }
 
@@ -34,13 +35,7 @@ final class FactsViewModelImplementation: FactsViewModel {
         stopReachabilityNotifier()
     }
     
-    private var factsData: FactsData? {
-        didSet {
-            DispatchQueue.main.async {
-                self.view?.update()
-            }
-        }
-    }
+    private var factsData: FactsData?
     
     private var facts: [Fact] { factsData?.rows ?? [] }
 
@@ -65,6 +60,10 @@ final class FactsViewModelImplementation: FactsViewModel {
         setupReachability()
     }
     
+    func viewWillAppear() {
+        setupReachability()
+    }
+    
     func fetchContent() {
         factsApiClient.getFacts { [weak self] result in
             guard let self = self else { return }
@@ -76,11 +75,14 @@ final class FactsViewModelImplementation: FactsViewModel {
                 self.factsData = nil
                 
                 DispatchQueue.main.async {
-                    self.view?.showAlert(title: "Error", message: error.localizedDescription, buttonText: "Dismiss")
+                    self.view?.update()
                 }
                 
             case .success(let factsData):
                 self.factsData = factsData
+                DispatchQueue.main.async {
+                    self.view?.update()
+                }
             }
         }
     }
@@ -94,7 +96,12 @@ extension FactsViewModelImplementation {
     func setupReachability() {
         print("--- setupReachability")
         
-        reachability = try! Reachability()
+        do {
+            reachability = try Reachability()
+        } catch {
+            // Do not alert the for reachability errors
+            print(error.localizedDescription)
+        }
         
         NotificationCenter.default.addObserver(
             self,
@@ -109,7 +116,7 @@ extension FactsViewModelImplementation {
         do {
             try reachability?.startNotifier()
         } catch {
-            // Do not alert the user if the reachability fails to start
+            // Do not alert the for reachability errors
             print("could not start reachability notifier")
         }
     }

@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
     
-    func setEmptyMessage(_ message: String) {
+    func setMessage(_ message: String) {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         label.text = message
         label.textColor = .lightGray
@@ -19,7 +19,12 @@ extension UITableView {
         label.font = .systemFont(ofSize: 14.0)
         label.sizeToFit()
         
-        self.backgroundView = label
+        separatorStyle = .none
+        backgroundView = label
     }
     
+    func removeMessage() {
+        separatorStyle = .singleLine
+        backgroundView = nil
+    }
 }

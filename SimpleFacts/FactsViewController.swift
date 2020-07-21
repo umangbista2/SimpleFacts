@@ -20,7 +20,7 @@ class FactsViewController: UIViewController {
 
     private let internetStatusLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "The internet seems to be offline"
+        lbl.text = "The internet connection appears to be offline"
         lbl.backgroundColor = .white
         lbl.textColor = .lightGray
         lbl.font = UIFont.boldSystemFont(ofSize: 16)
@@ -54,10 +54,14 @@ class FactsViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.view = self
-        viewModel.viewDidLoad()
         viewModel.fetchContent()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        viewModel.viewWillAppear()
+    }
 }
 
 // MARK: - View Protocol
@@ -73,11 +77,13 @@ extension FactsViewController: FactsView {
     }
     
     func showAlert(title: String, message: String, buttonText: String) {
-        alert(type: .alert, title: title, message: message, buttonText: buttonText)
+        alert(type: .alert, title: title, message: message, buttonText: buttonText) {
+            self.refreshControl.endRefreshing()
+        }
     }
     
     func displayNoInternetStatus(_ display: Bool) {
-        title = "No internet"
+        title = nil
         internetStatusLabel.isHidden = !display
     }
 }
@@ -85,8 +91,7 @@ extension FactsViewController: FactsView {
 // MARK: - Events
 
 extension FactsViewController {
-    @objc
-    private func refresh(_ sender: Any) {
+    @objc private func refresh(_ sender: Any) {
         viewModel.fetchContent()
     }
 }
@@ -140,7 +145,14 @@ extension FactsViewController {
 extension FactsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows(inSection: section)
+        let rows = viewModel.numberOfRows(inSection: section)
+        if rows == 0 {
+            tableView.setMessage("Some error occurred \n Pull to refresh")
+        } else {
+            tableView.removeMessage()
+        }
+        return rows
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

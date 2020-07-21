@@ -18,7 +18,7 @@ class NetworkLayer {
         request.httpMethod = api.method
         
         session.dataTask(with: request) { (data, response, error) in
-            
+
             if let error = error {
                 print("Client error!", error.localizedDescription)
                 completion(.failure(ApiError.client))
