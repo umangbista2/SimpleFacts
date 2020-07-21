@@ -128,10 +128,10 @@ class FactTableViewCell: UITableViewCell {
             photoView.rightAnchor.constraint(equalTo: stackView.leftAnchor, constant: -8),
             photoView.widthAnchor.constraint(equalTo: dataView.widthAnchor, multiplier: 0.20),
             photoView.heightAnchor.constraint(equalTo: dataView.widthAnchor, multiplier: 0.20),
-            photoView.bottomAnchor.constraint(lessThanOrEqualTo: dataView.bottomAnchor, constant: 8),
+            photoView.bottomAnchor.constraint(lessThanOrEqualTo: dataView.bottomAnchor, constant: -8),
             
             stackView.topAnchor.constraint(equalTo: dataView.topAnchor, constant: 8),
-            stackView.bottomAnchor.constraint(lessThanOrEqualTo: dataView.bottomAnchor, constant: 8)
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: dataView.bottomAnchor, constant: -8)
         ])
     }
     
