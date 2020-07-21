@@ -10,6 +10,7 @@ import UIKit
 
 protocol FactsView: class {    
     func update()
+    func showAlert(title: String, message: String, buttonText: String)
 }
 
 class FactsViewController: UIViewController {
@@ -41,6 +42,7 @@ class FactsViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.view = self
+        viewModel.viewDidLoad()
         viewModel.fetchContent()
     }
 
@@ -56,6 +58,10 @@ extension FactsViewController: FactsView {
         title = viewModel.title
 
         tableView.reloadData()
+    }
+    
+    func showAlert(title: String, message: String, buttonText: String) {
+        alert(type: .alert, title: title, message: message, buttonText: buttonText)
     }
     
 }

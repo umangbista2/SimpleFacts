@@ -19,6 +19,12 @@ class NetworkLayer {
         
         session.dataTask(with: request) { (data, response, error) in
             
+            if let error = error {
+                print("Client error!", error.localizedDescription)
+                completion(.failure(ApiError.client))
+                return
+            }
+            
             guard let data = data else {
                 print("Client error!")
                 completion(.failure(ApiError.client))
