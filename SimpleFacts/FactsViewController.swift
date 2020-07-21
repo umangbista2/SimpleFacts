@@ -11,11 +11,23 @@ import UIKit
 protocol FactsView: class {    
     func update()
     func showAlert(title: String, message: String, buttonText: String)
+    func displayNoInternetStatus(_ display: Bool)
 }
 
 class FactsViewController: UIViewController {
 
     private let viewModel: FactsViewModel!
+
+    private let internetStatusLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "The internet seems to be offline"
+        lbl.backgroundColor = .white
+        lbl.textColor = .lightGray
+        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.textAlignment = .center
+        lbl.numberOfLines = 0
+        return lbl
+    }()
 
     private let tableView = UITableView()
 
@@ -64,6 +76,10 @@ extension FactsViewController: FactsView {
         alert(type: .alert, title: title, message: message, buttonText: buttonText)
     }
     
+    func displayNoInternetStatus(_ display: Bool) {
+        title = "No internet"
+        internetStatusLabel.isHidden = !display
+    }
 }
 
 // MARK: - Events
@@ -83,7 +99,17 @@ extension FactsViewController {
         title = "Facts"
         
         setupTableView()
+        setupInternetStatusView()
         setupRefreshControl()
+        displayNoInternetStatus(false)
+    }
+    
+    private func setupInternetStatusView() {
+        view.insertSubview(internetStatusLabel, aboveSubview: tableView)
+        
+        internetStatusLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        internetStatusLabel.anchor(top: view.layoutMarginsGuide.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
     }
     
     private func setupTableView() {
@@ -104,6 +130,7 @@ extension FactsViewController {
     private func setupRefreshControl() {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        
         tableView.addSubview(refreshControl)
     }
 }

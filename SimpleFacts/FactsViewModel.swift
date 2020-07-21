@@ -30,6 +30,10 @@ final class FactsViewModelImplementation: FactsViewModel {
         self.factsApiClient = factsApiClient
     }
     
+    deinit {
+        stopReachabilityNotifier()
+    }
+    
     private var factsData: FactsData? {
         didSet {
             DispatchQueue.main.async {
@@ -81,31 +85,31 @@ final class FactsViewModelImplementation: FactsViewModel {
         }
     }
     
-    
-    // MARK: - Network Reachability
+}
+
+// MARK: - Network Reachability
+
+extension FactsViewModelImplementation {
     
     func setupReachability() {
         print("--- setupReachability")
-
+        
         reachability = try! Reachability()
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(reachabilityChanged(_:)),
             name: .reachabilityChanged,
             object: reachability)
         
-        do {
-            try reachability?.startNotifier()
-        } catch {
-            print("could not start reachability notifier")
-        }
-        
+        startReachabilityNotifier()
     }
     
     func startReachabilityNotifier() {
         do {
             try reachability?.startNotifier()
         } catch {
+            // Do not alert the user if the reachability fails to start
             print("could not start reachability notifier")
         }
     }
@@ -122,12 +126,11 @@ final class FactsViewModelImplementation: FactsViewModel {
         
         if reachability.connection == .unavailable {
             print("reachabilityChanged: unavailable")
+            view?.displayNoInternetStatus(true)
         } else {
             print("reachabilityChanged: available")
+            fetchContent()
+            view?.displayNoInternetStatus(false)
         }
-    }
-    
-    deinit {
-        stopReachabilityNotifier()
     }
 }
